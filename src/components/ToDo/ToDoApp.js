@@ -15,6 +15,7 @@ export default function() {
 				<Switch>
 					<Route path="/" exact component={LoginComponent} />
 					<Route path="/login" component={LoginComponent} />
+					<Route path="/logout" component={LogoutComponent} />
 					<Route path="/welcome/:name" component={WelcomeComponent} />
 					<Route path="/todos" component={ListToDo} />
 					<Route path="" component={ErrorComponent} />
@@ -68,6 +69,15 @@ export function LoginComponent() {
 			/>
 			<br />
 			<button onClick={loginClicked}>Login</button>
+		</>
+	);
+}
+
+function LogoutComponent() {
+	return (
+		<>
+			<h1>You are logged out Successfully ...</h1>
+			<div className="container">Thank you for using the Applicatiion !!!</div>
 		</>
 	);
 }
@@ -179,10 +189,11 @@ function HeaderComponent() {
 
 function FooterComponent() {
 	return (
-		<div>
-			<hr />
-			Footer
-		</div>
+		<footer className="footer">
+			<span className="text-muted">
+				All Rights Reserved 2020 @SanjaySaravanan
+			</span>
+		</footer>
 	);
 }
 
